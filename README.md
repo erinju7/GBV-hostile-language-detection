@@ -54,24 +54,20 @@ Due to GitHub storage and file size constraints, some large files used in this p
 - **File:** `MGSD - Expanded.csv`
 - **Usage:** Used solely for replicating the HEARTS baseline model
 - **Access:** Available via the original HEARTS data release
+- Expected local path:data/MGSD - Expanded.csv
 
-Expected local path:data/MGSD - Expanded.csv
 
----
-
-### 2. Original Jigsaw Training Dataset (Raw)
+**2. Original Jigsaw Training Dataset (Raw)**
 - **File:** `train.csv` (from *Jigsaw Unintended Bias in Toxicity Classification*)  
 - **Purpose:** Raw dataset used to construct the GBV-focused training subset  
-- **Source:** Kaggle - Jigsaw Unintended Bias in Toxicity Classification  
+- **Source:** Kaggle - Jigsaw Unintended Bias in Toxicity Classification
+- Expected local path: data/train.csv
 
-Expected local path: data/train.csv
----
-**2. Trained model checkpoints**
+**3. Trained model checkpoints**
 - **Directory:** `models/`
 - **Contents:** Fine-tuned ALBERT-v2 model weights
----
 
-**3. Prediction outputs and intermediate results**
+**4. Prediction outputs and intermediate results**
 - **Directory:** `results/`
 - **Contents:** Test predictions, probability scores, and classification reports
 
