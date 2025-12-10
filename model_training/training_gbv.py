@@ -25,15 +25,18 @@ from transformers import (
 )
 
 # ---------- 0. CONFIG ----------
+# Project base dir
+try:
+    BASE_DIR = Path(__file__).resolve().parent.parent
+except NameError:
+    BASE_DIR = Path.cwd()
 
-# Project base dir: .../CLEAN_PROJECT
-BASE_DIR = Path(__file__).resolve().parent.parent
 CSV_PATH = BASE_DIR / "data" / "jigsaw_gbv.csv"
 
 MODEL_NAME = "albert-base-v2"
 
-MODEL_OUTPUT_BASE_DIR = "/tmp/erinju_albert_jigsaw_model"
-RESULTS_OUTPUT_BASE_DIR = "/tmp/erinju_albert_jigsaw_results"
+MODEL_OUTPUT_BASE_DIR = BASE_DIR / "models" / "albert_gbv"
+RESULTS_OUTPUT_BASE_DIR = BASE_DIR / "results" / "albert_gbv"
 
 TEST_SIZE = 0.2
 RANDOM_STATE = 42
@@ -42,8 +45,10 @@ BATCH_SIZE = 32
 EPOCHS = 3
 LEARNING_RATE = 2e-5
 
-os.makedirs(MODEL_OUTPUT_BASE_DIR, exist_ok=True)
-os.makedirs(RESULTS_OUTPUT_BASE_DIR, exist_ok=True)
+# Create output directories
+MODEL_OUTPUT_BASE_DIR.mkdir(parents=True, exist_ok=True)
+RESULTS_OUTPUT_BASE_DIR.mkdir(parents=True, exist_ok=True)
+
 
 logging.basicConfig(level=logging.INFO)
 transformers_logger = logging.getLogger("transformers")

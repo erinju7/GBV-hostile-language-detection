@@ -20,16 +20,26 @@ from transformers import (
     Trainer,
 )
 from pathlib import Path
-BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Project base dir
+try:
+    BASE_DIR = Path(__file__).resolve().parent.parent
+except NameError:
+    BASE_DIR = Path.cwd()
+
 CSV_PATH = BASE_DIR / "data" / "MGSD - Expanded.csv"
 
-TEXT_COL = "text"
+TEXT_COL  = "text"
 LABEL_COL = "label"
 GROUP_COL = "stereotype_type"
 
 MODEL_NAME = "albert-base-v2"
-OUTPUT_DIR = "/tmp/erinju_albert_mgsd_model"
-RESULTS_DIR = "/tmp/erinju_albert_mgsd_results"
+
+OUTPUT_DIR  = BASE_DIR / "models" / "albert_mgsd"
+RESULTS_DIR = BASE_DIR / "results" / "albert_mgsd"
+
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
 TEST_SIZE = 0.2
 RANDOM_STATE = 42
