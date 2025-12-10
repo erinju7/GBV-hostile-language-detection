@@ -16,28 +16,29 @@ This project aligns with the **United Nations Sustainable Development Goals (SDG
 ```text
 GBV-hostile-language-detection/
 │
-├── scripts/                 # Data preprocessing and model training
-│   ├── preprocess_jigsaw.py
-│   ├── train_gbv.py
-│   └── evaluate_gbv.py
+├── preprocess/                     # Data preprocessing
+│   └── process_jigsaw.ipynb
 │
-├── performance_analysis/    # Interpretability and evaluation
-│   ├── lime_tp_fn.py
+├── model_training/                 # Model training & replication
+│   ├── model_replicate.py
+│   └── training_gbv.py
+│
+├── performance_analysis/            # Evaluation & interpretability
+│   ├── lime_explain.py
+│   ├── lime_confusion_examples.csv
 │   └── lime_tp_fn_subplots.png
 │
-├── notebooks/               # Exploratory analysis and visualisation
-│   ├── EDA_jigsaw.ipynb
-│   └── error_analysis.ipynb
+├── EDA/                             # Exploratory data analysis
+│   ├── EDA.py
+│   ├── label_distribution.csv
+│   ├── text_length_distribution_sns.png
+│   └── wordcloud.png
 │
-├── figs/                    # Figures used in poster or report
-│
-├── data/                    # Dataset directory (not tracked in GitHub)
-├── models/                  # Trained models (not tracked in GitHub)
-├── results/                 # Prediction outputs (not tracked in GitHub)
+├── data/                            # Dataset directory
+│   └── jigsaw_gbv.csv               # GBV-focused subset
+│   # NOTE: raw Jigsaw dataset is excluded due to size limits
 │
 ├── README.md
-├── requirements.txt
-└── .gitignore
 ```
 ## Project Report
 
