@@ -24,9 +24,7 @@ GBV-hostile-language-detection/
 │   └── training_gbv.py
 │
 ├── performance_analysis/            # Evaluation & interpretability
-│   ├── lime_explain.py
-│   ├── lime_confusion_examples.csv
-│   └── lime_tp_fn_subplots.png
+│   └── lime_explain.py
 │
 ├── EDA/                             # Exploratory data analysis
 │   ├── EDA.py
@@ -36,9 +34,10 @@ GBV-hostile-language-detection/
 │
 ├── data/                            # Dataset directory
 │   └── jigsaw_gbv.csv               # GBV-focused subset
-│   # NOTE: raw Jigsaw dataset is excluded due to size limits
+│   # NOTE: Raw Jigsaw dataset is excluded due to size limits
 │
 ├── README.md
+└── .gitignore
 ```
 ## Project Report
 
