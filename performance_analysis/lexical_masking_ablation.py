@@ -15,7 +15,7 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 # -------------------- CONFIG --------------------
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-MODEL_DIR = BASE_DIR / "models" / "albert_gbv_checkpoint_5205"
+MMODEL_DIR = BASE_DIR / "models" / "albert_gbv" / "jigsaw_gbv_trained"
 RESULTS_PATH = BASE_DIR / "results" / "albert_gbv" / "full_results.csv"
 OUT_DIR = BASE_DIR / "performance_analysis"
 OUT_DIR.mkdir(parents=True, exist_ok=True)

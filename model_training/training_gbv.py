@@ -211,7 +211,7 @@ def evaluate_model(
         .map(lambda ex: {"labels": ex["label"]})
     )
 
-    result_output_dir = os.path.join(result_output_base_dir, dataset_name)
+    result_output_dir = result_output_base_dir
     os.makedirs(result_output_dir, exist_ok=True)
 
     # Use Trainer.predict for evaluation
