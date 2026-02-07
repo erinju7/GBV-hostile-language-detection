@@ -24,11 +24,11 @@ GBV-hostile-language-detection/
 │   └── training_gbv.py
 │
 ├── performance_analysis/            # Evaluation, explainability & ablation studies
-│   ├── lime_explain.py              # LIME-based local explanations (TP / FN analysis)
+│   ├── lime_explain.py              # LIME-based local explanations
 │   ├── lexical_masking_ablation.py  # Lexical masking ablation experiment
-│   ├── lime_tp_fn_subplots.png      # LIME visualization for correct / missed hostile cases
+│   ├── lime_tp_fn_subplots.png      # LIME visualization
 │   ├── lexical_masking_ablation_summary.csv   # Summary metrics for masking ablation
-│   └── lexical_masking_ablation_per_sample.csv # Per-sample ablation outputs (local only)
+│   └── lexical_masking_ablation_per_sample.csv # Per-sample ablation outputs
 │
 ├── EDA/                             # Exploratory data analysis
 │   ├── EDA.py
