@@ -50,11 +50,7 @@ GBV-hostile-language-detection/
 A full technical report describing the dataset construction, model training, evaluation, and interpretability analysis is available here:
 - [Project Report (PDF)](report/project_report.pdf)
 
-## Data, Models, and Results Availability
-
-Due to GitHub storage and file size constraints, some large files used in this project are not included in the repository.
-
-### Excluded files
+## Excluded files
 
 **Trained model checkpoints**
 - **Directory:** `models/`
