@@ -15,15 +15,6 @@ env/
 # ========= Jupyter =========
 .ipynb_checkpoints/
 
-# ========= Data (large files) =========
-data/
-*.csv
-
-# ========= Models / results =========
-models/
-checkpoints/
-results/
-
 # ========= Logs =========
 *.log
 
