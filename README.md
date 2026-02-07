@@ -6,8 +6,6 @@ This project replicates and adapts the [HEARTS Framework](https://arxiv.org/abs/
 
 The **ALBERT transformer model** is adapted for binary classification of hostile versus non-hostile content, leveraging its parameter efficiency while maintaining strong classification performance. The model is trained on a curated subset of the [Jigsaw Unintended Bias Dataset](https://www.kaggle.com/c/jigsaw-unintended-bias-in-toxicity-classification), filtered to retain comments explicitly related to women and gender-targeted discourse.
 
-To address concerns around transparency and accountability in automated content moderation systems, this project incorporates **Local Interpretable Model-agnostic Explanations (LIME)**. LIME is used to interpret individual model predictions by identifying which words contribute most strongly to **correct classifications** as well as **misclassifications**, helping to reveal both model strengths and limitations.
-
 This project aligns with the **United Nations Sustainable Development Goals (SDGs)**, particularly:
 - **SDG 5**: Gender Equality  
 - **SDG 16**: Peace, Justice, and Strong Institutions
