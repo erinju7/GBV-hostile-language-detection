@@ -32,12 +32,18 @@ GBV-hostile-language-detection/
 │   ├── text_length_distribution_sns.png
 │   └── wordcloud.png
 │
-├── data/                            # Dataset directory
-│   └── jigsaw_gbv.csv               # GBV-focused subset
-│   # NOTE: Raw Jigsaw dataset is excluded due to size limits
+├── data/                            # Datasets
+│   ├── jigsaw_gbv.csv               # GBV-focused curated subset
+│   ├── jigsaw_dataset.csv           # Full Jigsaw dataset
+│   └── MGSD-Expanded.csv            # HEARTS baseline replication dataset
 │
-├── README.md
-└── .gitignore
+├── report/                          # Report writing and figures
+│
+├── results/                         # Prediction outputs
+│
+├── .gitattributes                   # Repository file attributes
+├── .gitignore                       # Ignored files and directories
+└── README.md
 ```
 ## Project Report
 
