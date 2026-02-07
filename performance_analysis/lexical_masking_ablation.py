@@ -13,16 +13,10 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
 
 # -------------------- CONFIG --------------------
-# Local: run from the repo root directory
-# e.g., python performance_analysis/lexical_masking_ablation.py
+
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-# Local checkpoint directory (NOT tracked by git)
 MODEL_DIR = BASE_DIR / "models" / "albert_gbv_checkpoint_5205"
-
-# You confirmed this is correct in your setup
 RESULTS_PATH = BASE_DIR / "results" / "albert_gbv" / "full_results.csv"
-
 OUT_DIR = BASE_DIR / "performance_analysis"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
