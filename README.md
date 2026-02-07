@@ -55,8 +55,7 @@ A full technical report describing the dataset construction, model training, eva
 ## Excluded files
 
 **Trained model checkpoints**
-
-- **Directory:** `models/albert_gbv_checkpoint_5205`
+- **Directory:** `models/`
 - **Description:** Fine-tuned ALBERT-v2 model weights and training artifacts.
 - **Rationale:** Model checkpoints are excluded due to file size constraints and reproducibility considerations. All experiments can be reproduced using the provided training scripts.
 
