@@ -159,7 +159,7 @@ def train_model(
     trainer = Trainer(
         model=model,
         args=training_args,
-        tokenizer=tokenizer,
+        processing_class=tokenizer,
         train_dataset=train_ds_tok,
         eval_dataset=val_ds_tok,
         compute_metrics=compute_metrics,
@@ -218,7 +218,7 @@ def evaluate_model(
     eval_trainer = Trainer(
         model=model,
         args=eval_args,
-        tokenizer=tokenizer_local,
+        processing_class=tokenizer_local,
     )
 
     pred_output = eval_trainer.predict(test_ds_tok)

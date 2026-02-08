@@ -168,7 +168,7 @@ trainer = Trainer(
     args=training_args,
     train_dataset=train_ds_tok,
     eval_dataset=test_ds_tok,   # evaluate on held-out test set
-    tokenizer=tokenizer,
+    processing_class=tokenizer,
     compute_metrics=compute_metrics,
 )
 
