@@ -17,7 +17,7 @@ except NameError:
 if not (BASE_DIR / "data").exists() and (BASE_DIR / "GBV-hostile-language-detection").exists():
     BASE_DIR = BASE_DIR / "GBV-hostile-language-detection"
 
-MODEL_DIR = BASE_DIR / "models" / "albert_gbv" / "jigsaw_gbv_trained"
+MODEL_DIR = BASE_DIR / "models" / "albert_gbv"
 RESULTS_PATH = BASE_DIR / "results" / "albert_gbv" / "full_results.csv"
 OUT_DIR     = BASE_DIR / "performance_analysis"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
