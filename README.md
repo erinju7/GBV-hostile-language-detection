@@ -14,38 +14,45 @@ This project aligns with the **United Nations Sustainable Development Goals (SDG
 ```text
 GBV-hostile-language-detection/
 │
-├── preprocess/                     # Data preprocessing
+├── preprocess/
 │   └── process_jigsaw.ipynb
 │
-├── model_training/                 # Model training & replication
+├── model_training/
 │   ├── model_replicate.py
 │   └── training_gbv.py
 │
-├── performance_analysis/            # Evaluation, explainability & ablation studies
-│   ├── lime_explain.py              # LIME-based local explanations
-│   ├── lexical_masking_ablation.py  # Lexical masking ablation experiment
-│   ├── lime_tp_fn_subplots.png      # LIME visualization
-│   ├── lexical_masking_ablation_summary.csv   # Summary metrics for masking ablation
-│   └── lexical_masking_ablation_per_sample.csv # Per-sample ablation outputs
+├── performance_analysis/
+│   ├── lime_explain.py
+│   ├── lexical_masking_ablation.py
+│   ├── lime_tp_fn_subplots.png
+│   ├── lexical_masking_ablation_summary.csv
+│   └── lexical_masking_ablation_per_sample.csv
 │
-├── EDA/                             # Exploratory data analysis
+├── EDA/
 │   ├── EDA.py
 │   ├── label_distribution.csv
 │   ├── text_length_distribution_sns.png
 │   └── wordcloud.png
 │
-├── data/                            # Datasets
-│   ├── jigsaw_gbv.csv               # GBV-focused curated subset
-│   ├── jigsaw_dataset.csv           # Full Jigsaw dataset
-│   └── MGSD-Expanded.csv            # HEARTS baseline replication dataset
+├── data/
+│   ├── jigsaw_gbv.csv
+│   ├── jigsaw_dataset.csv
+│   └── MGSD-Expanded.csv
 │
-├── report/                          # Report writing and figures
+├── results/
+│   ├── albert_gbv/
+│   │   ├── full_results.csv
+│   │   └── classification_report.csv
+│   └── albert_mgsd/
+│       ├── full_results.csv
+│       └── classification_report.csv
 │
-├── results/                         # Prediction outputs and evaluation metrics
-│
-├── .gitattributes                   # Repository file attributes
-├── .gitignore                       # Ignored files and directories
-└── README.md
+├── report/
+├── .gitattributes
+├── .gitignore
+├── README.md
+└── requirements.txt
+
 ```
 ## Project Report
 
