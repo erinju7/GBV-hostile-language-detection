@@ -30,7 +30,10 @@ try:
     BASE_DIR = Path(__file__).resolve().parent.parent
 except NameError:
     BASE_DIR = Path.cwd()
-
+# If runs notebook from /content, try to locate repo folder
+if not (BASE_DIR / "data").exists() and (BASE_DIR / "GBV-hostile-language-detection").exists():
+    BASE_DIR = BASE_DIR / "GBV-hostile-language-detection"
+    
 CSV_PATH = BASE_DIR / "data" / "jigsaw_gbv.csv"
 
 MODEL_NAME = "albert-base-v2"
