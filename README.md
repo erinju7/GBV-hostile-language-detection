@@ -49,7 +49,6 @@ GBV-hostile-language-detection/
 │
 ├── report/
 ├── .gitattributes
-├── .gitignore
 ├── README.md
 └── requirements.txt
 
