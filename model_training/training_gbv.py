@@ -152,7 +152,12 @@ def train_model(
         per_device_eval_batch_size=batch_size,
         weight_decay=0.01,
         logging_steps=50,
-        save_strategy="no",  
+        eval_strategy="epoch",              
+        save_strategy="epoch",              
+        load_best_model_at_end=True,
+        metric_for_best_model="f1_macro",
+        greater_is_better=True,
+        save_total_limit=2,
         report_to="none",
     )
 
@@ -165,13 +170,20 @@ def train_model(
         compute_metrics=compute_metrics,
     )
 
+    print("\nStarting training...")
     trainer.train()
-    val_metrics = trainer.evaluate()
-    print("Validation metrics:", val_metrics)
+    
 
-    # Save final model to models/albert_gbv/
+    val_metrics = trainer.evaluate()
+    print("\n" + "="*50)
+    print("Best model validation metrics:")
+    print(val_metrics)
+    print("="*50 + "\n")
+
+    # Save best model to models/albert_gbv/
     trainer.save_model(str(model_dir))
     tokenizer.save_pretrained(str(model_dir))
+    print(f"Best model saved to: {model_dir}")
 
     return str(model_dir)
 
@@ -218,9 +230,9 @@ def evaluate_model(
     eval_trainer = Trainer(
         model=model,
         args=eval_args,
-        processing_class=tokenizer_local,
     )
 
+    print("\nEvaluating on test set...")
     pred_output = eval_trainer.predict(test_ds_tok)
     logits = pred_output.predictions
     preds = np.argmax(logits, axis=-1)
@@ -231,7 +243,7 @@ def evaluate_model(
 
     results_df = pd.DataFrame(
         {
-            "text": test_data["text"],
+            "text": test_data["text"].values,
             "predicted_label": preds,
             "predicted_probability": prob_pos,
             "actual_label": y_true,
@@ -250,10 +262,24 @@ def evaluate_model(
     df_report.to_csv(report_file_path)
     print("Saved classification report to:", report_file_path)
 
+    # Print summary
+    print("\n" + "="*50)
+    print("Test Set Performance Summary:")
+    print("="*50)
+    print(f"Overall Accuracy: {report['accuracy']:.4f}")
+    print(f"Macro F1: {report['macro avg']['f1-score']:.4f}")
+    print(f"Hostile Recall: {report['1']['recall']:.4f}")
+    print(f"Hostile Precision: {report['1']['precision']:.4f}")
+    print("="*50 + "\n")
+
     return df_report
 
 # ---------- 6. MAIN PIPELINE ----------
 if __name__ == "__main__":
+    print("\n" + "="*50)
+    print("ALBERT-v2 Fine-tuning on Jigsaw GBV Dataset")
+    print("="*50 + "\n")
+    
     model_path = train_model(
         train_data=train_data,
         model_name=MODEL_NAME,
@@ -271,5 +297,8 @@ if __name__ == "__main__":
         seed=RANDOM_STATE,
     )
 
-    print("\nClassification report (macro):")
-    print(report)
+    print("\n" + "="*50)
+    print("Training and evaluation complete!")
+    print(f"Model directory: {MODEL_DIR}")
+    print(f"Results directory: {RESULTS_DIR}")
+    print("="*50)
