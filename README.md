@@ -47,7 +47,7 @@ GBV-hostile-language-detection/
 │       ├── full_results.csv
 │       └── classification_report.csv
 │
-├── report/
+├── GBV_Hostile_Language_Detection_Report
 ├── .gitattributes
 ├── README.md
 └── requirements.txt
@@ -56,7 +56,7 @@ GBV-hostile-language-detection/
 ## Project Report
 
 A full technical report describing the dataset construction, model training, evaluation, and interpretability analysis is available here:
-- [Project Report (PDF)](report/project_report.pdf)
+- [Project Report (PDF)](GBV_Hostile_Language_Detection_Report.pdf)
 
 ## Excluded files
 Model checkpoints are excluded due to file size constraints and reproducibility considerations. All experiments can be reproduced using the provided training scripts.
